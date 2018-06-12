@@ -1,0 +1,18 @@
+public class Sumatoria { //objeto sumatoria
+
+  public static void main(String[] args) { //método main o constructor
+  //inicializando las variables
+  	int x = 0;
+  	int y = 0;
+  	int suma = 0;
+  
+  //Definimos valores
+  	x = 5;
+  	y = 7;
+  	suma = x + y;
+  	
+  //imprimimos el resultado
+    System.out.println("Resultado: " + suma);
+  }
+  
+}
