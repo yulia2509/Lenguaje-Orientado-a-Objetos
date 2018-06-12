@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Multiplicar { 
+
+  public static void main(String[] args) throws IOException {  
+  	int numero1 = 0;
+  	int numero2 = 0;
+  	int mult = 0;
+  	String temp = " ";
+	
+	//Notar que readLine() nos obliga a declarar IOException
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //Ya declaramos al "lector"
+	
+	//Se le pide el numero al usuario
+	System.out.println("Por favor ingrese el numero 1");
+	temp = br.readLine(); //siempre retorna un STRING con el dato
+	numero1 = Integer.parseInt(temp);
+	
+	System.out.println("Por favor ingrese el numero 2");
+	temp = br.readLine();
+	//Notar que readLine siempre retorna String y la clase BufferReader no tiene metodo para leer enteros
+	numero2 = Integer.parseInt(temp);
+	
+	mult = numero1*numero2;
+	System.out.println("El resultado de la multiplicacion es "+ mult);
+	
+  }
+  
+}
