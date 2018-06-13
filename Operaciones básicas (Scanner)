@@ -1,0 +1,48 @@
+
+import java.util.Scanner;
+
+
+public class OperacionesBasicas { 
+
+  public static void main(String[] args) {  
+	float numero1 = 0.0f;
+	float numero2 = 0.0f;
+	float c = 0.0f;
+	int operacion = 0;
+	
+	Scanner sc = new Scanner(System.in); //Ya declaramos al "lector"
+	
+	//Se le pide el numero al usuario
+	System.out.println("Por favor ingrese el numero 1");
+	numero1 = sc.nextFloat();
+	
+	System.out.println("Por favor ingrese el numero 2");
+	numero2 = sc.nextFloat();
+	
+	System.out.println("Seleccione la operacion (1 suma, 2 resta, 3 division y 4 multiplicacion)");
+	operacion = sc.nextInt();
+	
+	switch(operacion){
+		case 1:
+		c= numero1+numero2;
+		break;
+		
+		case 2:
+		c = numero1-numero2;
+		break;
+		
+		case 3:
+		c = numero1/numero2;
+		break;
+		
+		case 4:
+		c = numero1*numero2;
+		break;
+	
+	}
+	
+	System.out.println("La operacion es: " + c);
+	
+  }
+  
+}
