@@ -12,7 +12,7 @@ public class Persona {
 		keypad = new Scanner(System.in); //inicializando el lector (scanner) y le estamos asignando un objeto
 		
 		System.out.print("Por favor ingrese el nombre: ");
-		name = keypad.next();
+		name = keypad.next(); //nombre sin espacios (nombres sin apellido)
 		
 		System.out.print("Por favor ingrese su edad: ");
 		age = keypad.nextInt();
