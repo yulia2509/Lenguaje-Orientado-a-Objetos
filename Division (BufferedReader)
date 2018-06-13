@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 public class DivisionBR { 
 
   public static void main(String[] args) throws IOException {  
-  	float numero1 = 0;
-  	float numero2 = 0;
-  	float div = 0;
+  	float numero1 = 0.0f;
+  	float numero2 = 0.0f;
+  	float div = 0.0f;
   	String temp = " ";
 	
 	//Notar que readLine() nos obliga a declarar IOException
@@ -25,7 +25,7 @@ public class DivisionBR {
 	numero2 = Float.parseFloat(temp);
 	
 	div = (numero1/numero2);
-	System.out.println("El resultado de la multiplicacion es "+ div);
+	System.out.println("El resultado de la division es "+ div);
 	
   }
   
