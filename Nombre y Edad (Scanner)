@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class NombreEdad { 
+
+  public static void main(String[] args) {
+  	String Name = " ";
+  	int Age = 0;  	
+
+	Scanner sc = new Scanner(System.in); //Ya declaramos al "lector"
+
+	System.out.println("Por favor ingrese el nombre");
+	Name = sc.nextLine();
+	
+	System.out.println("Por favor ingrese su edad");
+	Age = sc.nextInt();
+	
+	if(Age>=18){
+		System.out.println("El usuario es mayor de edad");
+	} else {
+		System.out.println("Aun no es mayor de edad");
+	}
+	
+  }
+  
+}
