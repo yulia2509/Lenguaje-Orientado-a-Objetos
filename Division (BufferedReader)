@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class DivisionBR { 
+
+  public static void main(String[] args) throws IOException {  
+  	float numero1 = 0;
+  	float numero2 = 0;
+  	float div = 0;
+  	String temp = " ";
+	
+	//Notar que readLine() nos obliga a declarar IOException
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //Ya declaramos al "lector"
+	
+	//Se le pide el numero al usuario
+	System.out.println("Por favor ingrese el numero 1");
+	temp = br.readLine(); //siempre retorna un STRING con el dato
+	numero1 = Float.parseFloat(temp);
+	
+	System.out.println("Por favor ingrese el numero 2");
+	temp = br.readLine();
+	//Notar que readLine siempre retorna String y la clase BufferReader no tiene metodo para leer enteros
+	numero2 = Float.parseFloat(temp);
+	
+	div = (numero1/numero2);
+	System.out.println("El resultado de la multiplicacion es "+ div);
+	
+  }
+  
+}
