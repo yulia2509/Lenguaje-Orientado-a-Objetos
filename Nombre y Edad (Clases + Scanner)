@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Persona { 
+	//atributos que solo se pueden trabajar desde la instancia
+	//declaracion e inicializacion (menos scanner)
+	private String name = " ";
+	private int age = 0;
+	private Scanner keypad;
+
+	//inicializar
+	public void inicializar(){
+		keypad = new Scanner(System.in); //inicializando el lector (scanner) y le estamos asignando un objeto
+		
+		System.out.print("Por favor ingrese el nombre: ");
+		name = keypad.next();
+		
+		System.out.print("Por favor ingrese su edad: ");
+		age = keypad.nextInt();
+	}
+	
+	//imprimir
+	public void imprimir(){
+		System.out.println("Nombre: "+name);
+		System.out.println("Edad: "+age);
+	}
+	
+	//mayor de edad
+	public void MayorEdad(){
+	
+		if(age>=18){
+		
+			System.out.println(name+" es mayor de edad");
+		
+		} else {
+		
+			System.out.println(name+" aún no es mayor de edad");
+		
+		}
+	}
+
+  public static void main(String[] args) { 	
+  	Persona persona1; //creamos una instancia de la clase Persona
+  	
+  	persona1 = new Persona();
+  	persona1.inicializar();
+  	persona1.imprimir();
+  	persona1.MayorEdad();
+	
+  }
+  
+}
