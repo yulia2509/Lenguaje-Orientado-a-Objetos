@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+// Creamos nuestra clase
+public class SearchHola {
+    
+    private static Scanner keypad;
+    private static String chain;
+    private static boolean result;
+    
+    //Inicializamos la entrada de datos
+    public void inicializar(){
+        
+        keypad = new Scanner(System.in);
+        System.out.print("Introduzca una frase: ");
+        chain=keypad.nextLine();
+    
+    }    
+    
+    
+    //Utilizamos el método split para separar un string
+    
+    public static boolean separaCadena(){
+        
+        String arreglo[] = chain.split(" ");
+        for(int i=0; i<arreglo.length; i++){
+            if(arreglo[i].equals("hola")){
+                result = true;
+        }
+    }
+        return result;
+    }
+    
+    public static void imprime(){
+        if(result == true){
+            System.out.println("TRUE");
+        }else{
+            System.out.println("FALSE");
+        }
+    }
+    
+    
+    public static void main(String[] ar) {
+        
+        SearchHola searchWord;
+        searchWord = new SearchHola();
+        searchWord.inicializar();
+        searchWord.separaCadena();
+        searchWord.imprime();
+     
+
+    }
+    
+}
