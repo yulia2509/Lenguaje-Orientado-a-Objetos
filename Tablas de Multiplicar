@@ -1,0 +1,51 @@
+/*Confeccionar una clase que permita ingresar valores enteros por
+  teclado y nos muestre la tabla de multiplicar de dicho valor.
+  El programa finaliza ingresando -1
+*/
+import java.util.Scanner;
+
+//Creamos nuestra clase
+public class TablasDeMultiplicar {
+    
+    private Scanner keypad;
+    private static int numero;
+    private int cont = 0;
+    private int valor = 0;
+    private int i;
+    
+    //Creamos nuestros metodos
+    
+    //Método inicializar: Se lee el número por teclado usando Scanner
+    public void inicializar(){
+        
+        keypad = new Scanner(System.in);
+        System.out.print("Introduzca un número: ");
+        numero=keypad.nextInt();
+    
+    }
+    
+    //Método realizaTabla: Se realiza la tabla mediante ciclo while
+    public void realizaTabla(){
+        if(numero == -1){
+            System.out.println("Ingresó un -1. FIN DEL PROGRAMA ");
+        }else{
+            while(cont<10){
+            cont++;
+            valor = numero*cont;
+            System.out.println("(" + numero + ")(" +cont+ ") = " +valor);
+        }//end while
+        }
+        
+    }
+    
+    public static void main(String[] ar) {
+       
+        TablasDeMultiplicar multi;
+        
+        while(numero != -1){
+            multi = new TablasDeMultiplicar();
+            multi.inicializar();
+            multi.realizaTabla();
+        } 
+    }
+}
