@@ -1,0 +1,35 @@
+//No distingue mayusculas de minuscular
+import java.util.Scanner;
+
+//Creamos la clase
+public class CuentaA {
+    
+    private Scanner keypad;
+    private String chain;
+    private int contador=0;
+    
+    public void inicializar(){
+    
+        keypad = new Scanner(System.in);
+        System.out.println("Ingrese la cadena de texto");
+        chain = keypad.nextLine();
+        
+        for(int i=0; i<chain.length();i++){
+            if(chain.charAt(i)=='a' || chain.charAt(i)=='A'){
+                contador++;
+            }
+        }
+    }
+    
+    public void imprimir(){
+        System.out.println("La palabra tiene: " + contador + " letras a ");
+    }
+    
+    public static void main(String[] args) {
+        CuentaA cuentaLetras;
+        cuentaLetras = new CuentaA();
+        cuentaLetras.inicializar();
+        cuentaLetras.imprimir();
+    }
+    
+}
