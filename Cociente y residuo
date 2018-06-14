@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+
+//Creamos nuestra Clase
+public class DivisionResiduo {
+    
+     public Scanner teclado;
+     private int numero1;
+     private int numero2;
+     private float division;
+     private int residuo;
+     
+    public void inicializar(){
+        
+       Scanner teclado = new Scanner(System.in);
+       System.out.print("Ingrese el primero número: ");
+       numero1 = teclado.nextInt();
+       System.out.print("Ingrese el segundo número: ");
+       numero2 = teclado.nextInt();
+        
+    }
+    
+    public float realizaCociente(){
+        
+        division = (numero1/numero2);
+        return division;
+    }
+    
+    public float realizaResiduo(){
+        
+        residuo = numero1%numero2;
+        return residuo;
+        
+    }
+    
+    public void imprimir(){
+        
+        System.out.println("El resultado de la división es (cociente): " + division);
+        
+        System.out.println("El residuo es: " + residuo);
+    }
+
+    public static void main(String[] ar) {
+        
+        DivisionResiduo operacion;
+        operacion = new DivisionResiduo();
+        operacion.inicializar();
+        operacion.realizaCociente();
+        operacion.realizaResiduo();
+        operacion.imprimir();
+        
+    }
+    
+}
