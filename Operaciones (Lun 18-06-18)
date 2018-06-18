@@ -1,0 +1,124 @@
+import java.util.Scanner;
+
+public class Calculadora {
+    private Scanner teclado;
+    private float n1;
+    private float n2;
+    private float resultado;
+    private static char seleccion;
+    private String operador;
+    
+    public void menu() {
+        System.out.println("** MENÚ DE OPCIONES **");
+        System.out.println("Ingrese + para suma");
+        System.out.println("Ingrese - para resta");
+        System.out.println("Ingrese * para multiplicación");
+        System.out.println("Ingrese / para división");
+        System.out.println("Ingrese % para obtener el residuo");
+        System.out.println("Ingrese e para detener el programa \n");
+    }
+    
+    public void inicializar(){
+        teclado = new Scanner(System.in);
+        System.out.print("Ingrese operador: ");
+        seleccion=teclado.next().charAt(0);
+    
+        if(seleccion != 'e') {
+            System.out.print("Ingrese el primer número: ");
+            n1=teclado.nextFloat();
+            System.out.print("Ingrese el segundo número: ");
+            n2=teclado.nextFloat();
+        }
+    }
+    
+    public double seleccionarOperacion(char opcion){
+        switch(opcion){
+            case '+':
+                suma(n1,n2);
+                break;
+            case '-':
+                resta(n1,n2);
+                break;
+            case '*':
+                multiplicacion(n1,n2);
+                break;
+            case '/':
+                division(n1,n2);
+                break;
+            case '%':
+                residuo(n1,n2);
+                break;
+            case 'e':
+                break;
+        }
+        return resultado;
+    }
+    
+    public void suma(Float x, Float y) {
+        operador = " la suma";
+        resultado = x+y;
+    }
+    
+    public void resta(Float x, Float y) {
+        operador = " la resta";
+        resultado = x-y;
+    }
+    
+    public void multiplicacion(Float x, Float y) {
+        operador = " la multiplicación";
+        resultado = x*y;
+    }
+    
+    public void division(Float x, Float y) {
+        if(n2==0){
+            do { 
+                System.out.println("No se puede dividir entre 0");
+                System.out.print("Por favor, ingrese otro segundo número: ");
+                n2=teclado.nextFloat();
+            } while (n2==0);
+            operador = " la division";
+            resultado = x/n2;
+        } else {
+            operador = " la division";
+            resultado = x/y;
+        }
+    }
+    
+    public void residuo(Float x, Float y) {
+        if(n2==0){
+            System.out.println("No se puede dividir entre 0");
+            System.out.print("Por favor, ingrese otro segundo número: ");
+            n2=teclado.nextFloat();
+            operador = "l residuo";
+            resultado = x%y;         
+        } else {
+            operador = "l residuo";
+            resultado = x%y;     
+        }
+    }
+    
+    public void imprimir(char opcion) {
+        if(opcion != 'e'){
+            System.out.println("El resultado de" + operador + " es " + resultado + "\n");
+            inicializar();
+            seleccionarOperacion(seleccion);
+            repetir();
+        }
+    }
+    
+    public void repetir() {
+        if(seleccion != 'e'){
+            imprimir(seleccion);
+        } else {
+            System.out.println("Fin del programa.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Calculadora operacion1 = new Calculadora();
+        operacion1.menu();
+        operacion1.inicializar();
+        operacion1.seleccionarOperacion(seleccion);
+        operacion1.imprimir(seleccion);
+    }
+}
