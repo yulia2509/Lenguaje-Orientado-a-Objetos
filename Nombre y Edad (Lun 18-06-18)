@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Persona {
+    private Scanner teclado;
+    private String nombre;
+    private int edad=0;
+    
+    public void inicializar() {
+        teclado = new Scanner(System.in);
+        System.out.print("Por favor, ingrese su nombre: ");
+        nombre = teclado.nextLine();
+        System.out.print("Por favor, ingrese su edad: ");
+        edad = teclado.nextInt();
+        if (edad <= 0 || edad > 110) {
+            do {
+                System.out.print("Edad incorrecta. Por favor, vuelva a ingresarla: ");
+                edad = teclado.nextInt();
+            } while (edad <= 0 || edad > 110);
+        }
+    }
+    
+    public void imprimir(String nombr, int edd) {
+        System.out.println("");
+        System.out.println("Nombre: " + nombr);
+        System.out.println("Edad: " + edd);
+    }
+    
+    public void esMayorEdad(String nombr, int edd) {
+        if(edd>=18) {
+          System.out.println(nombre+" es mayor de edad.");
+        } 
+        else {
+          System.out.println(nombre+" es menor de edad.");
+        }
+    }
+    
+    public static void main(String[] args) {
+        Persona persona1;
+        persona1 = new Persona();
+        
+        persona1.inicializar();
+        persona1.imprimir(persona1.nombre, persona1.edad);
+        persona1.esMayorEdad(persona1.nombre, persona1.edad);
+    }
+}
