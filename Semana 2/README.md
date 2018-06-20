@@ -23,3 +23,6 @@ Variable M (memoria y estatica, puede ser llamada en dos calculadoras) la operac
 2. ejecuta calculadora será el main y crear dos instancias<br>
 (sets, gets, metodos y constructores: (x,y), (x, y, M))
 </b>
+<br>
+Tarea: implementar una suma hacia Pi (en dos clases: una hace la suma, por otra clase se ejecuta)<br>
+Suma 3 parámetros mediante la captura de datos:
