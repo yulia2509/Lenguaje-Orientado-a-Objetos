@@ -8,3 +8,17 @@
 - Uso de private, public, static, etc
 - Los programas se pueden implementar con diferentes archivos
 - Uso de los métodos get y set (se deben usar para cada atributo)
+<br><br>
+<b>Miercoles</b>
+- Privilegios en java (public, protected, no declarado y private)
+- Uso de static y final
+<b>
+Calculadora:<br>
+Mostrar dos operaciones<br>
+Almacenar dos valores<br>
+Constante Pi (no alterable)<br>
+Variable M (memoria y estatica, puede ser llamada en dos calculadoras) la operación previa se guardará en memoria<br>
+1. 3 clases: calculadora, operaciones y ejecuta calculadora
+2. ejecuta calculadora será el main y crear dos instancias
+(sets, gets, metodos y constructores: (x,y), (x, y, M))
+</b>
