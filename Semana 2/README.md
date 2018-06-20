@@ -12,7 +12,7 @@
 <b>Miercoles</b>
 - Privilegios en java (public, protected, no declarado y private)
 - Uso de static y final
-<br><br>
+<br>
 <b>
 Calculadora:<br>
 Mostrar dos operaciones<br>
@@ -23,6 +23,8 @@ Variable M (memoria y estatica, puede ser llamada en dos calculadoras) la operac
 2. ejecuta calculadora será el main y crear dos instancias<br>
 (sets, gets, metodos y constructores: (x,y), (x, y, M))
 </b>
+<br><br>
+Tarea1: implementar una suma hacia Pi (en dos clases: una hace la suma, por otra clase se ejecuta)<br>
+Suma 3 parámetros mediante la captura de datos (final static)
 <br>
-Tarea: implementar una suma hacia Pi (en dos clases: una hace la suma, por otra clase se ejecuta)<br>
-Suma 3 parámetros mediante la captura de datos:
+Tarea 2: crear dos instancias con M (memoria) y verificar si M se mantiene (static)
