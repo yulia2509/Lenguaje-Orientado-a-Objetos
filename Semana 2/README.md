@@ -24,7 +24,6 @@ Variable M (memoria y estatica, puede ser llamada en dos calculadoras) la operac
 (sets, gets, metodos y constructores: (x,y), (x, y, M))
 </b>
 <br><br>
-<i>Tarea1:</i> implementar una suma hacia Pi (en dos clases: una hace la suma, por otra clase se ejecuta)<br>
-Suma 3 parámetros mediante la captura de datos (final static)
+<i>Tarea1:</i> implementar una suma hacia Pi (en dos clases: una hace la suma, por otra clase se ejecuta). Suma 3 parámetros mediante la captura de datos (final static)
 <br>
 <i>Tarea 2:</i> crear dos instancias con M (memoria) y verificar si M se mantiene (static)
