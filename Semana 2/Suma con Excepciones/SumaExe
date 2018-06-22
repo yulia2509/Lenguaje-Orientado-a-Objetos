@@ -1,0 +1,79 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tareasuma;
+
+/*
+Implementar sobre el ejercicio de suma.java y sumaExe.java lo siguiente:
+- Pedir 2 numeros.
+- Si el usuario inserta texto en lugar de numeros cachar el error y enviar una notificacion al respecto
+- Usar el bloque final para reiniciar el sistema (y pedir nuevamente datos) de ser posible.
+   */
+import java.util.Scanner;
+import java.lang.RuntimeException;
+import java.lang.IllegalArgumentException;
+import java.lang.NumberFormatException;
+
+public class SumaExe {
+    private static Scanner sc;
+    private static int x;
+    private static int y;
+    private static int opcion;
+    private static int r;
+    
+    SumaExe() {   
+    }
+    
+    public static void solicitarValores() throws RuntimeException {
+        sc = new Scanner(System.in);
+        System.out.print("Ingresar primer numero: ");
+        x = sc.nextInt();
+        System.out.print("Ingresar segundo numero: ");
+        y = sc.nextInt();
+    }
+    
+    public static void askAgain() throws RuntimeException{
+        sc = new Scanner(System.in);
+        System.out.println("\n" + "¿Desea realizar otra suma? 1:Si 2:No");
+        opcion = sc.nextInt();
+    }
+    
+    public static void main(String[] args) {
+        r = 0;
+        SumaExe sE = new SumaExe();
+        
+        try {
+            SumaExe.solicitarValores();
+            System.out.println("Valores ingresados correctamente");
+            r = 1;
+        } catch(RuntimeException e) {//Por convencion se usa la e
+            System.out.println("Error al ingresar uno de los valores");
+        } finally {
+            if (r == 1) {
+                Suma inst1 = new Suma(x,y);
+                System.out.println("La suma es: " + inst1.realizaSuma());
+                System.out.println("M: "+ inst1.almacenarOperacion()+"\n");
+                SumaExe.main(null);
+            } else {
+                //System.out.println("Error Inesperado");
+            }
+        }
+            
+        try {
+            SumaExe.askAgain();
+            //System.out.println("Valores ingresados correctamente");
+            r = 1;
+        } catch(RuntimeException e) {
+            System.out.println("404 Error: Por favor introduzca un valor numérico (1 o 2)");
+        } finally {
+            if(opcion == 1) {
+                SumaExe.main(null); 
+            } else {
+                System.out.println("Fin del programa");
+            }
+         
+        }
+    }
+}
