@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tareasuma;
+
+import java.util.Scanner;
+
+public class Suma {
+    private static double x;
+    private static double y;
+    public double suma;
+    public static double M;
+    
+    Suma(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    public void setX(double x) {
+        this.x = x;
+    }
+    public double getX() {
+        return x;
+    }
+    
+    public void setY(double y) {
+        this.y = y;
+    }
+    public double getY() {
+        return y;
+    }
+    
+    public void setM(double M) {
+        this.M = M;
+    }
+    public double getM() {
+        return M;
+    }
+
+    public double realizaSuma() {
+        suma = getX() + getY();
+        return suma;
+    }
+    
+    public double almacenarOperacion() {
+        M = getX() + getY() + getM();
+        return M;
+    }
+}
