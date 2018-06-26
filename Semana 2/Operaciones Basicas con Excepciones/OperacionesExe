@@ -24,15 +24,21 @@ public class OperacionesExe {
     OperacionesExe() {
         
     }
-
+    
+  /*  public static int solicitarOperacion() throws RuntimeException {
+        sc = new Scanner(System.in);
+        System.out.println("Que tipo de operaciones desea? (Básicas (1) o Avanzadas (2))");
+         num = sc.nextInt();
+         if(num!=1 && num!=2){
+             System.out.println("Seleccion de eleccion invalida (seleccione 1 o 2)");
+         }
+        return num;
+    }*/
     
     public static int solicitoOB() throws RuntimeException {
         sc = new Scanner(System.in);
         System.out.println("Seleccione las siguientes opciones 1: Suma, 2: Resta, 3: Multiplicacion y 4: Division");
          num = sc.nextInt();
-         if (num<1 || num >5){
-             System.out.println("Seleccion de operacion basica invalida");
-         }
         return num;
     }
     
@@ -57,9 +63,6 @@ public class OperacionesExe {
     }
     
     public static void main(String[] args) {
-            //OperacionesExe.solicitarValores();
-            //OperacionesBasicas datos = new OperacionesBasicas(x,y);
-            //System.out.println("El resultado es: " + datos.realiza_operacion(OperacionesExe.solicitoOB())+"\n"); 
             
         r = 0;
         
@@ -83,13 +86,12 @@ public class OperacionesExe {
                 }
                 
             } else {
-                //System.out.println("Error Inesperado");
+                
             }
         }
             
         try {
             OperacionesExe.askAgain();
-            //System.out.println("Valores ingresados correctamente");
             r = 1;
         } catch(InputMismatchException e) {
             System.out.println("404 Error: Por favor introduzca un valor numérico (1 o 2)");
