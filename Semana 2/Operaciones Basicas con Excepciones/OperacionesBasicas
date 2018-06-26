@@ -1,0 +1,103 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Calculadora;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Yulia
+ */
+public class OperacionesBasicas {
+    private static double x;
+    private static double y;
+    public double suma;
+    public double resta;
+    public double division;
+    public double multiplicacion;
+    public static double M;
+    public static double resultadoFinal;
+    
+    //Constructor 1: Asignación de valores(evitar ambigüedades)
+    OperacionesBasicas(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    //Sets y gets
+    public void setX(double x) {
+        this.x = x;
+    }
+    public double getX() {
+        return x;
+    }
+    
+    public void setY(double y) {
+        this.y = y;
+    }
+    public double getY() {
+        return y;
+    }
+    
+    public void setM(double M) {
+        this.M = M;
+    }
+    public double getM() {
+        return M;
+    }
+    
+    //Métodos: Suma, resta, multiplicacion y division
+    public double realizaSuma() {
+        suma = getX() + getY();
+        return suma;
+    }
+    
+    public double realizaResta() {
+        resta = getX() - getY();
+        return resta;
+    }
+    
+    public double realizaDivision() {
+        try{
+            division = getX()/getY();
+        } catch (ArithmeticException e){
+            division = 0;
+            System.out.println("No es posible dividir entre cero.");
+        }
+        return division;
+    }
+    
+    
+    public double realizaProducto() {
+        multiplicacion = getX()*getY();
+        return multiplicacion;
+    }
+    
+    
+    public double realiza_operacion(int opcion){
+        switch(opcion){
+            case 1:
+                resultadoFinal=realizaSuma();
+                break;
+            case 2:
+                resultadoFinal=realizaResta();
+                break;
+            case 3:
+                resultadoFinal=realizaProducto();
+                break;
+            case 4:
+                resultadoFinal=realizaDivision();
+                break;
+        }
+        return resultadoFinal;
+    }
+    
+    
+    public double almacenarMemoria() {
+        M = getX() + getY() + getM();
+        return M;
+    }
+    
+}
