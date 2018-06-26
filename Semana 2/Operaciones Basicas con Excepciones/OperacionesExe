@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Calculadora;
+
+import java.util.Scanner;
+import java.io.*;
+import java.util.InputMismatchException;
+
+/**
+ *
+ * @author Yulia
+ */
+public class OperacionesExe {
+    private static Scanner sc;
+    private static int x;
+    private static int y;
+    private static int opcion;
+    private static int r;
+    private static int num;
+    
+    OperacionesExe() {
+        
+    }
+
+    
+    public static int solicitoOB() throws RuntimeException {
+        sc = new Scanner(System.in);
+        System.out.println("Seleccione las siguientes opciones 1: Suma, 2: Resta, 3: Multiplicacion y 4: Division");
+         num = sc.nextInt();
+         if (num<1 || num >5){
+             System.out.println("Seleccion de operacion basica invalida");
+         }
+        return num;
+    }
+    
+    public static void validarOB() throws RuntimeException{
+        if (num<1 || num>4){
+            System.out.println("Seleccion de operacion basica invalida");
+        }
+    }
+    
+    public static void solicitarValores() throws RuntimeException {
+        sc = new Scanner(System.in);
+        System.out.print("Ingresar primer numero: ");
+        x = sc.nextInt();
+        System.out.print("Ingresar segundo numero: ");
+        y = sc.nextInt();
+    }
+    
+    public static void askAgain() throws RuntimeException{
+        sc = new Scanner(System.in);
+        System.out.println("\n" + "¿Desea realizar otra operacion? 1: Si 2: No");
+        opcion = sc.nextInt();
+    }
+    
+    public static void main(String[] args) {
+            //OperacionesExe.solicitarValores();
+            //OperacionesBasicas datos = new OperacionesBasicas(x,y);
+            //System.out.println("El resultado es: " + datos.realiza_operacion(OperacionesExe.solicitoOB())+"\n"); 
+            
+        r = 0;
+        
+        try {
+            OperacionesExe.solicitarValores();
+            System.out.println("Valores ingresados correctamente");
+            r = 1;
+        } catch(InputMismatchException e) {//Por convencion se usa la e
+            System.out.println("Error al ingresar uno de los valores");
+        } finally {
+            if (r == 1) {
+                
+                try{
+                    OperacionesBasicas datos = new OperacionesBasicas(x,y);
+                    System.out.println("El resultado es: " + datos.realiza_operacion(OperacionesExe.solicitoOB()));
+                    OperacionesExe.validarOB();
+                    System.out.println("Memoria: "+ datos.almacenarMemoria()+"\n");
+                    OperacionesExe.main(null);
+                }catch(InputMismatchException e){
+                    System.out.println("Opcion inválida");    
+                }
+                
+            } else {
+                //System.out.println("Error Inesperado");
+            }
+        }
+            
+        try {
+            OperacionesExe.askAgain();
+            //System.out.println("Valores ingresados correctamente");
+            r = 1;
+        } catch(InputMismatchException e) {
+            System.out.println("404 Error: Por favor introduzca un valor numérico (1 o 2)");
+        } finally {
+            if(opcion == 1) {
+                OperacionesExe.main(null); 
+            } else {
+               System.out.println("Fin del programa");
+            } 
+        }
+            
+    }
+    
+}
