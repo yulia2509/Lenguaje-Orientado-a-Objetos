@@ -18,7 +18,7 @@ public class OperacionesBasicas {
     public double division;
     public double multiplicacion;
     public static double M;
-    public static double resultadoFinal;
+    public double resultadoFinal = 0;
     
     //Constructor 1: Asignación de valores(evitar ambigüedades)
     OperacionesBasicas(int x, int y) {
