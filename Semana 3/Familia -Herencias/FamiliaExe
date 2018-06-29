@@ -1,0 +1,69 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familia;
+
+import java.util.*;
+
+/**
+ *
+ * @author Yulia
+ */
+
+public class FamiliaExe {
+    public static ArrayList<Humano> familiares = new ArrayList<Humano>();
+            public static void main(String[] args){
+                Papa papa1 = new Papa("Adrian", 50, 78.4f, true);
+                Mama mama1 = new Mama("Alondra", 40, 55.3f, false);
+                Hijo hijo1 = new Hijo("Juan", 10, 32.1f);
+                
+                familiares.add(papa1);
+                familiares.add(mama1);
+                familiares.add(hijo1);
+                
+                System.out.println("La familia se ha despertado...");
+                for(Humano familiar : familiares){
+                    System.out.print(familiar.getName());
+                    familiar.Comer();
+                }
+                
+                
+                System.out.println(" ");
+                
+                System.out.println("Después...");
+                System.out.print(papa1.getName());
+                papa1.Trabajar();
+                System.out.print(mama1.getName());
+                mama1.Maquillar();
+                System.out.print(hijo1.getName());
+                hijo1.irEscuela();
+                
+                System.out.println(" ");
+                
+                System.out.println("A mediodía...");
+                for(Humano familiar : familiares){
+                    System.out.print(familiar.getName());
+                    familiar.Comer();
+                }
+                
+                System.out.println(" ");
+                
+                System.out.println("En la tarde...");
+                System.out.print(hijo1.getName());
+                hijo1.Jugar();
+                System.out.print(papa1.getName());
+                papa1.Trabajar();
+                
+                System.out.println(" ");
+                
+                System.out.println("Finalmente, en la noche...");
+                for(Humano familiar : familiares){
+                    System.out.print(familiar.getName());
+                    familiar.Dormir();
+                }
+
+            }
+    
+}
