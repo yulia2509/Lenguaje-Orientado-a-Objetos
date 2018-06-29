@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familia;
+
+/**
+ *
+ * @author Yulia
+ */
+public class Humano {
+    protected String name;
+    protected int age;
+    protected float weight;
+    
+    public Humano(){
+    
+    }
+    
+    public Humano (String name, int age, float weight){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+    
+    public void setPeso(float weight) {
+        this.weight = weight;
+    }
+    public double getPeso() {
+        return weight;
+    }
+    
+    public void Comer(){
+        System.out.println(" está comiendo");
+    }
+    
+    public void Dormir(){
+        System.out.println(" está durmiendo");
+    }
+
+}
