@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familia;
+
+/**
+ *
+ * @author Yulia
+ */
+public class Hijo extends Humano {
+    
+    public Hijo(){
+        super();
+    }
+    
+    public Hijo (String name, int age, float weight){
+        super(name, age, weight);
+    }
+    
+    public void irEscuela(){
+        System.out.println(" fue a la escuela");
+    }
+    
+    public void Jugar(){
+        System.out.println(" está jugando");
+    }
+    
+}
