@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package restaurante;
+
+/**
+ *
+ * @author Yulia
+ */
+public class Cocinero extends Empleado {
+    private String titulo;
+    
+    public Cocinero(){
+        super();
+    }
+    
+    public Cocinero(String name, String SSN, int age, int weight, String titulo){
+        super(name, SSN, age, weight);
+        this.titulo = titulo;
+    }
+    
+    public void setDegree(String titulo) {
+        this.titulo = titulo;
+    }
+    public String getDegree() {
+        return titulo;
+    }
+    
+    public void Cocinar(){
+        System.out.println(" está cocinando");
+    }
+}
