@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package restaurante;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Yulia
+ */
+public class RestauranteExe {
+    
+   public static ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+     public static void main(String[] args){
+        Cocinero cocinero1 = new Cocinero("Pepe", "2DSA345", 24, 78, "Licenciatura");
+        Mesero mesero1 = new Mesero("Roberto", "1TYU987", 19, 83, 20);
+        
+        empleados.add(cocinero1);
+        empleados.add(mesero1);
+        
+        System.out.println("Después de trabajar:");
+        for(Empleado empleado : empleados){
+            System.out.print(empleado.getName());
+            empleado.Descansar();
+        }
+        
+        
+        
+        
+     }
+}
