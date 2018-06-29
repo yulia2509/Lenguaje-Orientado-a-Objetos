@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package restaurante;
+
+/**
+ *
+ * @author Yulia
+ */
+public class Mesero extends Empleado {
+    private int tip;
+    
+    public Mesero(){
+        super();
+    }
+    
+    public Mesero(String name, String SSN, int age, int weight, int tip){
+        super(name, SSN, age, weight);
+        this.tip = tip;
+    }
+    
+    public void setTip(int tip) {
+        this.tip = tip;
+    }
+    public int getTip() {
+        return tip;
+    }
+    
+    public void tomarOrden(){
+        System.out.println(" está tomando la orden");
+    }
+}
