@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familiapol;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+/**
+ *
+ * @author Yulia
+ */
+
+public class FamiliaExe {
+    public static ArrayList<Humano> familiares = new ArrayList<Humano>();
+            public static void main(String[] args){
+                Humano Pedro = new Papa(1.91f, "Pedro", 50, 78.4f, true);
+                Humano Adriana = new Mama(1.53f, "Adriana", 40, 55.3f, false);
+                Humano Lalo = new Hijo(1.23f, "Lalo", 10, 32.1f);
+                Date fecha = new Date();
+                
+                familiares.add(Pedro);
+                familiares.add(Adriana);
+                familiares.add(Lalo);
+                //comer, caminar(-2, -3, -1kg), dormir y hacer ejercicio(comunes), rasurar(prepararse), crecer barba cuando duerme (papa), cortar pelo (prepararse), crecer pelo cuando duerme (mama)
+                System.out.printf("%s %tB %<te, %<tY", "FECHA ACTUAL:", fecha);
+                System.out.println(" ");
+                System.out.println("La familia se ha despertado...");
+                for(Humano familiar : familiares){
+                    System.out.print(familiar.getName());
+                    familiar.Comer();
+                }
+                
+                System.out.println(" ");
+                
+                System.out.println("A mediodía: ");
+                System.out.println("El papá... ");
+                System.out.print(Pedro.getName());
+                ((Papa)Pedro).Rasurar();
+                System.out.print(Pedro.getName());
+                ((Papa)Pedro).Trabajar();
+                
+                System.out.println("Y la mamá... ");
+                System.out.print(Adriana.getName());
+                ((Mama)Adriana).Maquillar();
+                
+                System.out.println("El hijo... ");
+                System.out.print(Lalo.getName());
+                ((Hijo)Lalo).irEscuela();
+                System.out.print(Lalo.getName());
+                ((Hijo)Lalo).Jugar();
+                
+                System.out.println(" ");
+                
+                System.out.println("Al final del día: ");
+                for(Humano familiar : familiares){
+                    System.out.print(familiar.getName());
+                    familiar.Dormir();
+                }
+                
+                
+
+            }
+    
+}
