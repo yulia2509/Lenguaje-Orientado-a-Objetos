@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familiapol;
+
+/**
+ *
+ * @author Yulia
+ */
+public abstract class Humano {
+    protected String name;
+    protected int age;
+    protected float weight;
+    protected float height;
+    
+    public Humano(){
+    
+    }
+    
+    public Humano (float height, String name, int age, float weight){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+    
+    public void setPeso(float weight) {
+        this.weight = weight;
+    }
+    public float getPeso() {
+        return weight;
+    }
+    
+    public void setAltura(float height) {
+        this.height = height;
+    }
+    public float getAltura() {
+        return height;
+    }
+    
+    public void Comer(){
+        System.out.println(" está comiendo (Clase Padre)");
+    }
+    
+    public abstract void Dormir(); 
+    //No se puede generar una instancia al ser abstracta esta clase
+
+}
