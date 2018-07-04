@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package familiapol;
+
+/**
+ *
+ * @author Yulia
+ */
+public class Hijo extends Humano {
+    
+    public Hijo(){
+        super();
+    }
+    
+    public Hijo (float height, String name, int age, float weight){
+        super(height, name, age, weight);
+    }
+    
+    @Override
+    public void Dormir(){
+        System.out.println(" duerme 10 horas");
+    }
+    
+    @Override
+    public void Comer(){
+        System.out.println(" está comiendo, mide "+getAltura()+"cm pero después crece a "+(getAltura()+0.020000f)+"cm");
+        height = height + 0.02f;
+    }
+    
+    public void irEscuela(){
+        System.out.println(" fue a la escuela");
+    }
+    
+    public void Jugar(){
+        System.out.println(" está jugando");
+    }
+    
+}
