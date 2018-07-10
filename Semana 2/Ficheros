@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ficheros;
+import java.io.*; //Incluyo todas las librerias IO
+/**
+ *
+ * @author Yulia
+ */
+public class FicheroTextoApp {
+    public static void main(String[] args){
+        try(FileWriter fw = new FileWriter("D:\\fichero1.txt");
+        FileReader fr = new FileReader("D:\\fichero1.txt")){
+        
+        //
+        fw.write("Esto es una prueb");
+        fw.write(97);
+        //
+        fw.flush();
+        //Leemos el fichero y lo guardamos en pantalla
+        int valor = fr.read();
+        while(valor != -1){
+            System.out.print((char)valor);
+            valor = fr.read();
+            }
+    
+        }catch(IOException e){
+        
+        
+        
+        }
+    }
+}
